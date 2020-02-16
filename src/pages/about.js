@@ -5,12 +5,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 
-const IndexPage = ({ data }) => (
+const AboutPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <BackgroundSection
       img={data.img.childImageSharp.fluid}
-      title='the weigh in shop'
+      title='about'
       styleClass="default-background"
     />
   </Layout>
@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
 {
-  img: file(relativePath: {eq:"weigh-in-hero.jpg"}) {
+  img: file(relativePath: {eq:"crawford-benavidez.jpg"}) {
     childImageSharp {
       fluid {
         ...GatsbyImageSharpFluid_tracedSVG
@@ -28,4 +28,4 @@ export const query = graphql`
 }
 `
 
-export default IndexPage
+export default AboutPage
