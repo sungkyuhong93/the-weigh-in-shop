@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "name": "website-test",
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@now/static-build",
+            "config": {
+                "newPipeline": true
+            }
+        }
+    ]
+}
