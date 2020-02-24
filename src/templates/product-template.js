@@ -17,10 +17,15 @@ const productTemplate = ({ data }) => {
           </div>
 
           <div className="pdp-col pdp-col-2">
-            <p className="pdp-title">{productTitle}</p>
-            <p className="pdp-price">${productPrice}</p>
+            <h3 className="pdp-title">{productTitle}</h3>
+            <h5 className="pdp-price">${productPrice}</h5>
             <div className="pdp-desc">
-              {productDescription}
+              <p className="large">
+                {productDescription}
+              </p>
+            </div>
+            <div>
+              <button className="pdp-add">Add To Cart</button>
             </div>
           </div>
         </div>

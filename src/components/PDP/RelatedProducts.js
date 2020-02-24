@@ -27,8 +27,8 @@ const RelatedProducts = ({ productCategoryTag, productTitleTag }) => {
 
     return (
         <div className="pdp-related">
-            <h3 style={{ textAlign: 'center' }}>You May Also Like</h3>
-            <div className="pdp-inner">
+            <h4 style={{ textAlign: 'center' }}>You May Also Like</h4>
+            <div className="related-inner">
                 {relatedProducts.edges.filter(({ node: product }) => {
                     return (
                         product.productCategory == productCategoryTag && product.productTitle !== productTitleTag

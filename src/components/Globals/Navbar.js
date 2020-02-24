@@ -50,15 +50,15 @@ export default class Navbar extends Component {
                             this.state.links.map((link) => {
                                 return (
                                     <li key={link.id} className="nav-item">
-                                        <Link to={link.path} className="nav-link text-capitalize">
+                                        <Link to={link.path} className="nav-link">
                                             {link.text}
                                         </Link>
                                     </li>
                                 )
                             })
                         }
-                        <li className="nav-item ml-sm-5"><Link className="nav-link text-capitalize">Cart</Link></li>
                     </ul>
+                    <Link className="nav-link text-capitalize cart-link">Cart</Link>
                 </div>
             </nav>
         )

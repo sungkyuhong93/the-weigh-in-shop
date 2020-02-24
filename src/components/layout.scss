@@ -1,0 +1,336 @@
+/*STYLEGUIDE MEDIA QUERIES */
+@mixin mobWidth {
+    @media (max-width: 600px) { @content; }
+  }
+  
+  @mixin tabWidth {
+    @media (max-width: 900px) { @content; }
+  }
+  
+  @mixin pdpMaxWidth {
+    @media (max-width: 1024px) { @content; }
+  }
+  
+  @mixin pdpMobMaxWidth {
+    @media (max-width: 767px) { @content; }
+  }
+  
+  @mixin bigScreens {
+    @media (min-width: 1800px) { @content; }
+  }
+
+  html {
+      font-size: 62.5%;
+  }
+
+  body {
+    font-family: HelveticaNeue-Bold;
+ }
+
+  h1 {
+   
+    font-style: normal;
+    font-weight: normal;
+    font-size: 5.2rem;
+    margin-bottom: 0 !important;
+    
+    @include tabWidth {    
+        font-size: 4rem; 
+     }
+    
+    @include mobWidth {    
+        font-size: 3.2rem; 
+     }
+  }
+  
+  h2 {
+   
+     font-size: 4.8rem; 
+    font-style: normal;
+    font-weight: 400;
+    line-height: 4.8rem;
+    margin-bottom: 0 !important;
+   
+    @include tabWidth {    
+        font-size: 4rem; 
+     }
+    
+     @include mobWidth {    
+       font-size: 3.6rem; 
+     }
+  }
+  
+  h3 {
+ 
+    font-size: 3.2rem; 
+    font-style: normal;
+    font-weight: 400/700;
+    line-height: 3.2rem/4rem; 
+    margin-bottom: 0 !important;
+      
+    @include tabWidth {    
+        font-size: 2.8; 
+     }
+    
+    @include mobWidth {    
+         font-size: 2.4rem; 
+     }
+  }
+  
+  h3.regular {
+   
+      font-size: 3.2rem; 
+    font-style: normal;
+    line-height: 3.2rem; 
+    margin-bottom: 0 !important;
+     
+    @include tabWidth {    
+        font-size: 2.8; 
+     }
+    
+     @include mobWidth {    
+      font-size: 2.4rem; 
+     }
+   
+  }
+  
+  
+  h4 {
+    
+    font-size: 2.4rem; 
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.2rem;
+    margin-bottom: 0 !important;
+      
+    @include tabWidth {    
+        font-size: 2.4rem; 
+     }
+    
+    @include mobWidth {    
+        font-size: 2rem;
+     }
+  }
+  
+  h5 {
+    
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+    font-size: 2.1rem; 
+    margin-bottom: 0 !important;
+       
+    @include tabWidth {    
+        font-size: 2.1rem; 
+     }
+    
+     @include mobWidth {        
+       font-size: 2.1rem; 
+     }
+  }
+  
+  h6 {
+   
+    font-size: 1.8rem; 
+    font-style: normal;
+    font-weight: normal;
+    line-height: 2.2rem;
+    margin-bottom: 0 !important;
+    
+      
+    @include tabWidth {    
+        font-size: 1.8rem; 
+     }
+    
+      @include mobWidth {    
+        font-size: 1.8rem; 
+     }
+  }
+  
+  a {
+    font-size: 1.4rem; 
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4rem;
+    text-transform: uppercase;
+    color: black;
+  }
+  
+  p.small {
+   
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+  
+  p.small-book {
+    
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+  
+  p.large {
+    
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+  
+  .pdp-add {
+    font-size: 16px !important;
+    color: black;
+    background-color: white;
+    padding: 10px !important;
+    flex:1;
+    text-transform: lowercase;
+    border: 1px solid black;
+    margin-top: 2rem;
+   }
+   
+   .pdp-add:hover {
+    background: black;
+    color: white;
+   }
+
+   .pdp-price {
+       margin-top: 2rem;
+   }
+
+   .pdp-desc {
+       margin-top: 2rem;
+   }
+
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .site-content {
+    flex-grow: 1;
+  }
+
+.navbar {
+    border-bottom: 1px solid black;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+.cart-link {
+    font-size: 2rem;
+    text-transform: uppercase !important;
+}
+
+.navbar-nav li a {
+    font-size: 2rem;
+}
+
+.default-background {
+    min-height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}
+
+.collection-row h3 {
+    text-align: center;
+}
+
+.collection-row {
+    margin-top: 5rem;
+}
+
+.collection-row-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 980px;
+    margin: 3rem auto 5rem auto;
+
+    & .product-item {
+        margin-top: 2rem;
+    }
+
+    @media(max-width: 980px) {
+           padding: 0 16px;
+    }
+}
+
+.product-item {
+    width: 31%;
+    text-align:center;
+   @include mobWidth {
+         width: 48%;
+    }
+}
+
+.product-item-price {
+    font-size: 1.6rem;
+}
+
+.pdp {
+    max-width: 900px;
+    margin: 4rem auto auto auto;
+    @media(max-width: 900px) {
+        padding: 0 16px; 
+    }
+}
+
+.pdp-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pdp-col {
+    width: 48%;
+}
+
+.product-price-title {
+   margin: 1.6rem 0 1rem 0;
+}
+
+.pdp-related {
+    margin-top: 5rem;
+}
+
+.related-inner {
+    margin:5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+
+    & ul {
+        list-style: none;
+        padding-left: 0 !important;
+        margin: 4rem 0;
+    }
+
+    & ul li {
+        margin-top: 2rem;
+    }
+
+    & ul li a {
+        color: white;
+    }
+    
+   
+}
+
+
+
+.nav-link {
+    color: black !important;
+}
+
+.collection-row h3 {
+    text-transform: uppercase;
+    padding: 2rem 0;
+}
+
