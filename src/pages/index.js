@@ -1,22 +1,34 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { connect } from "react-redux";
+
+import { toggleDarkMode } from "../state/actions";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 import Products from "../components/Home/Products";
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <BackgroundSection
-      img={data.img.childImageSharp.fluid}
-      title='the weigh in shop'
-      styleClass="default-background"
-    />
-    <Products />
-  </Layout>
-)
+const IndexPage = ({ data, toggleDark, toggleDarkMode }) => {
+  console.log(toggleDark)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <BackgroundSection
+        img={data.img.childImageSharp.fluid}
+        title='the weigh in shop'
+        styleClass="default-background"
+      />
+      <Products />
+      <button
+        style={toggleDark ? { background: 'black', color: 'white' } : null}
+        onClick={() => toggleDarkMode()}
+      >
+        {toggleDark ? 'true' : 'false'}
+      </button>
+    </Layout >
+  )
+}
 
 export const query = graphql`
 {
@@ -29,5 +41,8 @@ export const query = graphql`
   }
 }
 `
+const mapStateToProps = state => ({
+  toggleDark: state.toggleDark
+});
 
-export default IndexPage
+export default connect(mapStateToProps, { toggleDarkMode })(IndexPage);

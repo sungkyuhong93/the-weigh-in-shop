@@ -226,11 +226,11 @@
 }
 
 .default-background {
-    min-height: 100vh;
+    height: 70vh;
     display: flex;
     align-items:center;
     justify-content: center;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
 }
 
