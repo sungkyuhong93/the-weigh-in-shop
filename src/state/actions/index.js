@@ -1,6 +1,6 @@
 //toggle dark mode
 export const toggleDarkMode = () => ({
-    type: 'TOGGLE_DARKMODE',
+    type: 'TOGGLE_DARKMODE'
 });
 
 

@@ -10,7 +10,7 @@ import BackgroundSection from "../components/Globals/BackgroundSection"
 import Products from "../components/Home/Products";
 
 const IndexPage = ({ data, toggleDark, toggleDarkMode }) => {
-  console.log(toggleDark)
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -42,7 +42,7 @@ export const query = graphql`
 }
 `
 const mapStateToProps = state => ({
-  toggleDark: state.toggleDark
+  toggleDark: state.isDarkMode
 });
 
 export default connect(mapStateToProps, { toggleDarkMode })(IndexPage);
