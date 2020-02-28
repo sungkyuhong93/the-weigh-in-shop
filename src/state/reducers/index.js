@@ -1,14 +1,18 @@
 import { combineReducers } from 'redux';
 //init state
 const initialState = {
-    isDarkMode: false,
-    cartItems: []
+    isDarkMode: true,
+    cartItems: [],
+    cartOpen: false
 };
 
 const toggleReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'TOGGLE_DARKMODE':
-            return { ...state, isDarkMode: !state.isDarkMode };
+            return {
+                 ...state, 
+                 isDarkMode: !state.isDarkMode 
+                };
         default:
             return state;
     }
@@ -18,6 +22,11 @@ const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_ITEM':
             return { ...state, cartItems: [...state, action.payload] };
+        case "CART_OPEN":
+            return {
+                ...state,
+                cartOpen: !state.cartOpen
+            }
         default:
             return state;
     }
@@ -26,6 +35,6 @@ const cartReducer = (state = initialState, action) => {
 
 
 export default combineReducers({
-    toggleDark: toggleReducer,
+    toggle: toggleReducer,
     cart: cartReducer
 });
