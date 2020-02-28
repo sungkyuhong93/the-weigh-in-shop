@@ -58,7 +58,7 @@ export default class Navbar extends Component {
                             })
                         }
                     </ul>
-                    <Link to="/cart" className=" nav-link text-capitalize cart-link">Cart</Link>
+                    <a href="#" className="nav-link text-capitalize cart-link">Cart</a>
                 </div>
             </nav>
         )

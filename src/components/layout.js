@@ -13,12 +13,14 @@ import "./bootstrap.min.css";
 import "./layout.scss"
 
 import Navbar from "./Globals/Navbar";
+import Cart from "./Cart/Cart";
 import Footer from "./Globals/Footer";
 
 const Layout = ({ children }) => {
   return (
     <>
       <div className="site">
+        <Cart />
         <Navbar />
         <div className="site-content">
           {children}

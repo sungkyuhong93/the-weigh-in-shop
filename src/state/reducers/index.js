@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
+
 //init state
 const initialState = {
     isDarkMode: true,
     cartItems: [],
     cartOpen: false
 };
+
 
 const toggleReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -21,7 +23,10 @@ const toggleReducer = (state = initialState, action) => {
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_ITEM':
-            return { ...state, cartItems: [...state, action.payload] };
+            return { 
+                ...state, 
+                cartItems: [...state.cartItems, action.payload] 
+            };
         case "CART_OPEN":
             return {
                 ...state,
