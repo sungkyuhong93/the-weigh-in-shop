@@ -5,11 +5,11 @@ import Layout from "../components/Layout";
 import { MDXProvider } from "@mdx-js/react"
 import RelatedProducts from "../components/PDP/RelatedProducts";
 
-import {connect} from "react-redux";
-import {addItem} from "../state/actions"
+import { connect } from "react-redux";
+import { addItem, cartToggle } from "../state/actions"
 
 
-const productTemplate = ({ data, addItem }) => {
+const productTemplate = ({ data, addItem, cartToggle }) => {
   const { productTitle, productCategory, productDescription: { productDescription }, id, image, productPrice } = data.contentfulProductItem
   const productItem = data.contentfulProductItem
   return (
@@ -30,9 +30,11 @@ const productTemplate = ({ data, addItem }) => {
             </div>
             <div>
               <button
-                onClick={() => addItem(productItem)}
+                onClick={
+                  () => addItem(productItem)
+                }
                 className="pdp-add">
-                 Add To Cart
+                Add To Cart
               </button>
             </div>
           </div>
@@ -44,7 +46,7 @@ const productTemplate = ({ data, addItem }) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </Layout >
   )
 }
 
@@ -70,4 +72,4 @@ query($productTitle:String!) {
 
 
 
-export default connect(null, {addItem})(productTemplate);
+export default connect(null, { addItem, cartToggle })(productTemplate);

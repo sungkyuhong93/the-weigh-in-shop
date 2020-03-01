@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
+import { connect } from "react-redux";
+import { cartToggle } from "../../state/actions"
 
-
-export default class Navbar extends Component {
+class Navbar extends Component {
     state = {
         navbarOpen: false,
         css: 'collapse navbar-collapse',
@@ -58,9 +59,16 @@ export default class Navbar extends Component {
                             })
                         }
                     </ul>
-                    <a href="#" className="nav-link text-capitalize cart-link">Cart</a>
+                    <a onClick={() => this.props.cartToggle()} href="#" className="nav-link text-capitalize cart-link">Cart</a>
                 </div>
             </nav>
         )
     }
 }
+
+const mapStateToProps = state => ({
+    cartItems: state.cart.cartItems
+})
+
+
+export default connect(mapStateToProps, { cartToggle })(Navbar)

@@ -1,11 +1,13 @@
 import React from "react";
 import Img from "gatsby-image";
+import { connect } from "react-redux";
+import { removeItem, addItem, minusItem } from "../../state/actions"
 
-const CartItem = ({item}) => {
+const CartItem = ({ item, removeItem, addItem, minusItem }) => {
     return (
         <div className="cart-item">
             <div className="cart-item-inner">
-                <div class="cart-item-col">
+                <div className="cart-item-col">
                     <div className="cart-item-img-div">
                         <Img fluid={item.image.fluid} />
                     </div>
@@ -15,14 +17,14 @@ const CartItem = ({item}) => {
                     <p>
                         ${item.productPrice}
                     </p>
-                    <a href="#">Remove Item</a>
+                    <a href="#" onClick={() => removeItem(item)}>Remove Item</a>
                 </div>
 
-                <div class="cart-item-col">
-                    <div class="input-group">
-                        <input type="button" value="-" class="button-minus" data-field="quantity" />
-                        <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field" />
-                        <input type="button" value="+" class="button-plus" data-field="quantity" />
+                <div className="cart-item-col">
+                    <div className="input-group">
+                        <input onClick={() => minusItem(item)} type="button" value="-" className="button-minus" data-field="quantity" />
+                        <input type="number" step="1" max="" value={item.quantity} name="quantity" className="quantity-field" />
+                        <input onClick={() => addItem(item)} type="button" value="+" class="button-plus" data-field="quantity" />
                     </div>
                 </div>
             </div>
@@ -30,4 +32,5 @@ const CartItem = ({item}) => {
     )
 }
 
-export default CartItem;
+
+export default connect(null, { removeItem, addItem, minusItem })(CartItem)

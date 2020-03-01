@@ -26,7 +26,7 @@ const IndexPage = ({ data, toggleDark, toggleDarkMode }) => {
       >
         {toggleDark ? 'true' : 'false'}
       </button>
-    </Layout >
+    </Layout>
   )
 }
 
