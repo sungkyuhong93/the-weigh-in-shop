@@ -17,11 +17,6 @@ class Navbar extends Component {
                 id: 2,
                 path: '/about',
                 text: 'about'
-            },
-            {
-                id: 3,
-                path: '/blog',
-                text: 'blog'
             }
         ]
     }

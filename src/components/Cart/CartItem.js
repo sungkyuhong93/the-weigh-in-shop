@@ -7,16 +7,17 @@ const CartItem = ({ item, removeItem, addItem, minusItem }) => {
     return (
         <div className="cart-item">
             <div className="cart-item-inner">
-                <div className="cart-item-col">
+                <div className="cart-item-col cart-col-1">
                     <div className="cart-item-img-div">
                         <Img fluid={item.image.fluid} />
                     </div>
                     <h5>
                         {item.productTitle}
                     </h5>
-                    <p>
+                    <h4>
                         ${item.productPrice}
-                    </p>
+                    </h4>
+
                     <a href="#" onClick={() => removeItem(item)}>Remove Item</a>
                 </div>
 

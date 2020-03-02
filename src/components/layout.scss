@@ -27,6 +27,10 @@
     font-family: HelveticaNeue-Bold;
  }
 
+ a {
+   text-decoration: none;
+ }
+
   h1 {
    
     font-style: normal;
@@ -323,6 +327,10 @@
    
 }
 
+.nav-item {
+  margin: 0 1rem;
+}
+
 .nav-link {
     color: black !important;
 }
@@ -335,7 +343,7 @@
 /*CART STYLES*/
 .sidenav {
   height: 100%;
-  width: 40vw;
+  width: 60vw;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -344,15 +352,20 @@
   border: 1px solid black;
   overflow-x: hidden; 
   transition: 0.5s; 
+  max-width: 400px;
 
   @include mobWidth {
-      width: 50vw;
+      width: 100vw;
+      max-width: none;
   }
+}
+
+.cart {
+  padding-bottom: 4rem;
 }
 
 .cart-inner {
   position: relative;
-  border: 1px solid red;
 }
 
 .close-cart-btn {
@@ -370,6 +383,11 @@
   display: flex;
   justify-content:space-between;
   align-items: center;
+}
+
+.cart-item {
+  margin-top: 3rem;
+  border-top: 1px solid #eee;
 }
 
 input,
@@ -432,4 +450,35 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
   -webkit-appearance: none;
+}
+
+.checkout-continue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 16px;
+}
+
+.continue {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.checkout-btn {
+  width: 100%;
+  text-align:center;
+  border-radius: 5px;
+}
+
+button .StripeCheckout {
+  background-color: black;
+}
+
+.subtotal-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  border-top: 1px solid black;
+  padding-top: 1rem;
 }

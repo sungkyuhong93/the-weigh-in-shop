@@ -2,15 +2,23 @@ import React from 'react';
 import Img from "gatsby-image"
 import { Link } from "gatsby";
 import { connect } from "react-redux";
-import { addItem } from "../../state/actions"
+import { addItem, cartToggle } from "../../state/actions"
 
 
-const Product = ({ product, addItem }) => {
+const Product = ({ product, addItem, cartToggle }) => {
+
+
+    const addOpenCart = () => {
+        addItem(product);
+        cartToggle();
+    };
+
+
     return (
         <div className="product-item">
-            <div className="product-img-div">
+            <Link to={`/${product.productTitle}`} className="product-img-div">
                 <Img fluid={product.image.fluid} />
-            </div>
+            </Link>
             <div className="product-price-title">
                 <Link to={`/${product.productTitle}`} >{product.productTitle}</Link>
             </div>
@@ -18,7 +26,7 @@ const Product = ({ product, addItem }) => {
 
             <button
                 onClick={
-                    () => addItem(product)
+                    addOpenCart
                 }
                 className="pdp-add">
                 Add To Cart
@@ -27,4 +35,4 @@ const Product = ({ product, addItem }) => {
     )
 }
 
-export default connect(null, { addItem })(Product);
+export default connect(null, { addItem, cartToggle })(Product);

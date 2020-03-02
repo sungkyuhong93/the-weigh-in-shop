@@ -20,19 +20,13 @@ const IndexPage = ({ data, toggleDark, toggleDarkMode }) => {
         styleClass="default-background"
       />
       <Products />
-      <button
-        style={toggleDark ? { background: 'black', color: 'white' } : null}
-        onClick={() => toggleDarkMode()}
-      >
-        {toggleDark ? 'true' : 'false'}
-      </button>
     </Layout>
   )
 }
 
 export const query = graphql`
 {
-  img: file(relativePath: {eq:"weigh-in-hero.jpg"}) {
+  img: file(relativePath: {eq:"hero.jpg"}) {
     childImageSharp {
       fluid {
         ...GatsbyImageSharpFluid_tracedSVG

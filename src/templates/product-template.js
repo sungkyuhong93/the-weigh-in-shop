@@ -12,6 +12,14 @@ import { addItem, cartToggle } from "../state/actions"
 const productTemplate = ({ data, addItem, cartToggle }) => {
   const { productTitle, productCategory, productDescription: { productDescription }, id, image, productPrice } = data.contentfulProductItem
   const productItem = data.contentfulProductItem
+
+
+  const addOpenCart = () => {
+    addItem(productItem);
+    cartToggle();
+  };
+
+
   return (
     <Layout>
       <div className="pdp">
@@ -31,7 +39,7 @@ const productTemplate = ({ data, addItem, cartToggle }) => {
             <div>
               <button
                 onClick={
-                  () => addItem(productItem)
+                  addOpenCart
                 }
                 className="pdp-add">
                 Add To Cart
