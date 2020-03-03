@@ -33,7 +33,7 @@ const Cart = ({ cartItems, cartOpen, cartToggle }) => {
                                     return (
                                         <CartItem item={item} />
                                     )
-                                }) : <h4>Your Cart Is Empty</h4>
+                                }) : <h4 className="empty-cart">Your Cart Is Empty</h4>
                         }
                     </div>
 

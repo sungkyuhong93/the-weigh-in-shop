@@ -11,14 +11,17 @@ const CartItem = ({ item, removeItem, addItem, minusItem }) => {
                     <div className="cart-item-img-div">
                         <Img fluid={item.image.fluid} />
                     </div>
-                    <h5>
+                    <h5 style={{ marginTop: '1rem' }}>
                         {item.productTitle}
                     </h5>
                     <h4>
                         ${item.productPrice}
                     </h4>
 
-                    <a href="#" onClick={() => removeItem(item)}>Remove Item</a>
+                    <div style={{ marginTop: '1rem' }}>
+                        <a href="#" onClick={() => removeItem(item)}>Remove Item</a>
+                    </div>
+
                 </div>
 
                 <div className="cart-item-col">

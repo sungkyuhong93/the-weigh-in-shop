@@ -26,7 +26,7 @@ const IndexPage = ({ data, toggleDark, toggleDarkMode }) => {
 
 export const query = graphql`
 {
-  img: file(relativePath: {eq:"hero.jpg"}) {
+  img: file(relativePath: {eq:"new-weigh-in.jpg"}) {
     childImageSharp {
       fluid {
         ...GatsbyImageSharpFluid_tracedSVG

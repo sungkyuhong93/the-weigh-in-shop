@@ -10,11 +10,6 @@ class Navbar extends Component {
         links: [
             {
                 id: 1,
-                path: '/',
-                text: 'Home'
-            },
-            {
-                id: 2,
                 path: '/about',
                 text: 'about'
             }
@@ -41,7 +36,12 @@ class Navbar extends Component {
                     <span className="navbar-toggler-icon" />
                 </button>
                 <div className={this.state.css}>
-                    <ul className="navbar-nav mx-auto">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <a href="https://the-weigh-in.netlify.com/" className="nav-link">
+                                Blog
+                            </a>
+                        </li>
                         {
                             this.state.links.map((link) => {
                                 return (

@@ -230,11 +230,11 @@
 }
 
 .default-background {
-    height: 70vh;
+  min-height: 70vh;
     display: flex;
     align-items:center;
     justify-content: center;
-    background-position: center center;
+    
     background-size: cover;
 }
 
@@ -285,10 +285,18 @@
 .pdp-inner {
     display: flex;
     justify-content: space-between;
+
+    @include mobWidth {
+      flex-direction: column;
+    }
 }
 
 .pdp-col {
     width: 48%;
+
+    @include mobWidth {
+      width: 100%;
+    }
 }
 
 .product-price-title {
@@ -304,6 +312,7 @@
     display: flex;
     justify-content: center;
 }
+
 
 .footer {
     background-color: black;
@@ -358,6 +367,10 @@
       width: 100vw;
       max-width: none;
   }
+}
+
+.empty-cart {
+  margin-top: 4rem;
 }
 
 .cart {
@@ -481,4 +494,15 @@ button .StripeCheckout {
   margin-top: 2rem;
   border-top: 1px solid black;
   padding-top: 1rem;
+}
+
+.about-desc {
+  text-align: center;
+  padding: 5rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+.navbar-nav {
+  margin-left: auto;
 }
