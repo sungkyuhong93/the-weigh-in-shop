@@ -13,33 +13,32 @@ const getProducts = graphql`
           productCategory
           image {
             fluid {
-                src
                 ...GatsbyContentfulFluid_tracedSVG
               }
           }
         }
       }
     }
-  }
+}
 `
 
 export default function Products() {
-    console.log(getProducts)
-    return (
-        <StaticQuery query={getProducts} render={data => {
-            return (
-                <div className="collection-row">
-                    <h3>Our Products</h3>
-                    <div className="collection-row-inner">
-                        {data.products.edges.map(({ node: product }) => {
-                            return (
-                                <Product key={product.id} product={product} />
-                            )
-                        })}
-                    </div>
-                </div>
-            )
-        }
-        } />
-    );
+  console.log(getProducts)
+  return (
+    <StaticQuery query={getProducts} render={data => {
+      return (
+        <div className="collection-row">
+          <h3>Our Products</h3>
+          <div className="collection-row-inner">
+            {data.products.edges.map(({ node: product }) => {
+              return (
+                <Product key={product.id} product={product} />
+              )
+            })}
+          </div>
+        </div>
+      )
+    }
+    } />
+  );
 }
