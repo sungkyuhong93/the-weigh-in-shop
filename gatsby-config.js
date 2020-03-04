@@ -18,7 +18,6 @@ module.exports = {
         path: `${__dirname}/src/templates/`,
       },
     },
-    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -26,6 +25,7 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
