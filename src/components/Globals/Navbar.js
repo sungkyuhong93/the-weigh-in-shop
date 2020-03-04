@@ -38,7 +38,7 @@ class Navbar extends Component {
                 <div className={this.state.css}>
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a href="https://the-weigh-in.netlify.com/" className="nav-link">
+                            <a target="_blank" href="https://the-weigh-in.netlify.com/" className="nav-link">
                                 Blog
                             </a>
                         </li>
