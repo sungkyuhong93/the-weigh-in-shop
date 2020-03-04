@@ -13,7 +13,7 @@ const getProducts = graphql`
           productCategory
           image {
             fluid {
-                ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
               }
           }
         }

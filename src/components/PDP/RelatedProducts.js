@@ -15,8 +15,7 @@ const RelatedProducts = ({ productCategoryTag, productTitleTag }) => {
               productPrice
               image {
                 fluid {
-                    src
-                    ...GatsbyContentfulFluid_tracedSVG
+                  ...GatsbyContentfulFluid
                 }
               }
             }
