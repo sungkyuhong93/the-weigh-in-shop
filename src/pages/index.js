@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 import Products from "../components/Home/Products";
+import CollectionBoxes from "../components/Home/CollectionBoxes";
 
 const IndexPage = ({ data, toggleDark, toggleDarkMode }) => {
   console.log(toggleDark);
@@ -19,6 +20,7 @@ const IndexPage = ({ data, toggleDark, toggleDarkMode }) => {
         title='the weigh in shop'
         styleClass="default-background"
       />
+      <CollectionBoxes />
       <Products />
     </Layout>
   )

@@ -54,7 +54,7 @@ const productTemplate = ({ data, addItem, cartToggle }) => {
           </div>
         </div>
       </div>
-    </Layout >
+    </Layout>
   )
 }
 

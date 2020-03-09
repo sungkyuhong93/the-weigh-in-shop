@@ -27,12 +27,19 @@ exports.createPages = async ({
 `)
     products.forEach(({ node }) => {
         const productTitle = node.productTitle
-        const productCategory = node.productCateogy
+        const productCategory = node.productCategory
         createPage({
             path: productTitle, component: require.resolve('./src/templates/product-template.js'), context: {
                 productTitle: productTitle,
                 productCategory: productCategory
             }
         })
+
+        createPage({
+            path: productCategory, component: require.resolve('./src/templates/collection-template.js'), context: {
+                productCategory: productCategory
+            }
+        })
     })
 }
+

@@ -506,3 +506,38 @@ button .StripeCheckout {
 .navbar-nav {
   margin-left: auto;
 }
+
+.product-img-div img {
+  transition: all .3s ease-in-out !important;
+}
+
+.product-img-div img:hover {
+  transform: scale(1.05)
+}
+
+.collection-boxes {
+  margin-top: 5rem;
+}
+
+.collection-boxes-inner {
+  padding: 0 16px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;;
+}
+
+.collection-box {
+  width: 49%;
+  height: 100%;
+}
+
+.collection-box-bg {
+  height: 50vh !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+}
